@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * This file is part of nitrovel framework.
+ *
+ * (c) Nishadil <opensource@nishadil.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
+
+ define('NITROVEL_START', microtime(true));
+
+
+
+
+/*
+ * Register The Auto Loader from composer
+ */
+
+ require __DIR__.'/vendor/autoload.php';
+
+
+/*
+ * called from php-cgi, refuse to run and warn with message
+ */ 
+if (strpos(PHP_SAPI, 'cgi') === 0) {
+    exit("The cli tool will function with php-cli only. It will not works with php-cgi\n\n");
+}
+
+?>

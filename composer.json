@@ -1,0 +1,20 @@
+{
+    "name": "nitrovel/nitrovel",
+    "description": "A part of nirtovel framework",
+    "type": "project",
+    "license": "MIT",
+    "require":{
+        "php": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nitrovel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nishadil Dev Team"
+        }
+    ],
+    "minimum-stability": "stable"
+}
