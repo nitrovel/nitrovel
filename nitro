@@ -16,18 +16,35 @@
 
 
 
-/*
+/**
  * Register The Auto Loader from composer
  */
 
  require __DIR__.'/vendor/autoload.php';
 
 
-/*
+/**
  * called from php-cgi, refuse to run and warn with message
  */ 
 if (strpos(PHP_SAPI, 'cgi') === 0) {
     exit("The cli tool will function with php-cli only. It will not works with php-cgi\n\n");
 }
+
+
+/**
+ * Checkpoint : PHP verion
+ */
+$PHPrequire = 8.3;
+if (version_compare(PHP_VERSION, $PHPrequire, '<')) {
+    $msg = sprintf('Error: Your PHP version must be %s or higher. Your current version is %s', $PHPrequire, PHP_VERSION);
+    exit($msg);
+}
+
+
+/**
+ * Enabling the errors for commandline
+ */
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
 ?>
